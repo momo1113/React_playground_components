@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import CommentDetail from './CommentDetail'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+    let avatarAddress = "https://i.pinimg.com/280x280_RS/8d/3e/cd/8d3ecd98d283dce2dd722a953018334d.jpg";
+    return (
+        <div className="ui container comments">
+            <CommentDetail author="Sam" avatarAddress={avatarAddress} timeAgo="Today 5:00PM" post="Nice post" />
+            <CommentDetail author="Alex" avatarAddress={avatarAddress} timeAgo="Today 7:00PM" post="Noce blog" />
+            <CommentDetail author="Jane" avatarAddress={avatarAddress} timeAgo="Today 9:00PM" post="Awesome feed" />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+        </div >
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
